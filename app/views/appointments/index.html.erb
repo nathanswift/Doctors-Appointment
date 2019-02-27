@@ -1,0 +1,27 @@
+<h1>Appointments</h1>
+<h1><%= @user.name %>: Appointments</h1>
+<%= link_to 'Add Appointment', new_user_appointment_path(@user) %>
+
+<h2>Dates & Times</h2>
+<table class="ui celled table">
+<thead>
+<tr>
+<th>Patient Name  <i class="users icon"></i></th>
+<th>Appointment Date  <i class="calendar icon"></i></th>
+<th>Appointment Time  <i class="clock icon"></i></th>
+<th>Delete Appointment  <i class="ban icon"></i></th>
+</tr>
+</thead>
+
+<tbody>
+<% @user.appointments.each do |appt| %>
+  <tr>
+  <td><%= appt.user.name%> </td>
+  <td><%= appt.date %></td>
+  <td><%= appt.time %></td>
+  <td><%= link_to 'Delete Appointment', user_appointment_path(@user, appt), method: :delete, class: "ui inverted red button" %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+  

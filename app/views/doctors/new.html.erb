@@ -1,0 +1,11 @@
+<h1>New Doctor</h1>
+<%= form_with(model: @doctor, local: true, class: "ui form") do |f| %>
+    <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title, required: true, placeholder: "Name" %>
+        <%= f.label :name %>
+        <%= f.text_field :name, required: true, placeholder: "Name" %>
+        <%= f.submit %>
+    </div>
+<% end %>
+

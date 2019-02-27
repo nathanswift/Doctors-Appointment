@@ -1,0 +1,10 @@
+<h1><%= @user.name %></h1>
+<%= link_to 'Appointments', user_appointments_path(@user), class: "ui primary button inverted" %>
+<%= link_to "Delete User", @user, method: :delete, class: "ui red button inverted" %>
+<%= form_with(model: [@user, @appointment], local: true, class: 'ui form') do |f| %>
+<div class="field">
+    <%= f.date_field :date, required: true, placeholder: "Date" %>
+    <%= f.time_field :time, required: true, placeholder: "Time" %>
+    <%= f.submit %>
+<%end%>
+</div>
